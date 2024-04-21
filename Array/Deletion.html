@@ -24,19 +24,22 @@
       // console.log("data_)", data)
       function removeEl() {
         let data = [1, 2, 4, 3, 44, 32, 99, 6];
-        position = document.getElementById("pos").value;
+        let position = document.getElementById("pos").value;
+        position = parseInt(position);
         document.getElementById("array").innerHTML = ` array is ${data}`;
-        
+
         if (position > data.length) {
-            return alert("Limit exceeds must be leeser");
+          return alert("Limit exceeds must be leeser");
         }
+
         if (isNaN(parseInt(position))) {
-            return alert("Must be Number");
+          return alert("Must be Number");
         }
-        
-        for (let i = position; i < data.length; i++) {
-            data[i] = data[i + 1];
+
+        for (let i = position; i < data.length - 1; i++) {
+          data[i] = data[i + 1];
         }
+
         data.length = data.length - 1;
 
         document.getElementById(
