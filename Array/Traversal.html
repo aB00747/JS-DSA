@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversal Array</title>
+    <script>
+        let data  = [9,45,8,2,5,6,7,34,7,7,23,6,7,32];
+        let x = 3;
+        // for(let i = 0; i < data.length; i++){
+        //     document.write(`${i} - ${data[i]} || `);
+        // }
+        
+        document.write(`value of x is ${data[x]}`);
+
+
+        function getElement(){
+            let inputVal = document.getElementById("input").value;
+            if (inputVal && parseInt(inputVal) && (inputVal < data.length)){
+                alert(data[inputVal]);
+            } else if(!parseInt(inputVal)){
+                alert("Please enter a number");
+            } else {
+                alert("something went wrong");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="getElement()">get element</button>
+    
+</body>
+</html>

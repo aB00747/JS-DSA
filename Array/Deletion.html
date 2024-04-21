@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Array</title>
+    <script>
+      // What we need to do the Delete the value for the array. first we need remove the value then shift all the value -1 position.
+      // let data = [1,2,4,3,44,32,99,6];
+      // let positiion = 3;
+      // for (let i = 0; i < data.length - 1; i++) {
+      //     console.log(data[i]);
+      //     if (i >= positiion) {
+      //         data[i] = data[i+1]
+      //     }
+      // }
+
+      // he's solution
+      // for (let i = positiion; i < data.length; i++){
+      //     data[i] = data[i+1];
+      // }
+
+      // data.length = data.length - 1;  // remove the duplicate or undefined value
+      // console.log("data_)", data)
+      function removeEl() {
+        let data = [1, 2, 4, 3, 44, 32, 99, 6];
+        position = document.getElementById("pos").value;
+        document.getElementById("array").innerHTML = ` array is ${data}`;
+        
+        if (position > data.length) {
+            return alert("Limit exceeds must be leeser");
+        }
+        if (isNaN(parseInt(position))) {
+            return alert("Must be Number");
+        }
+        
+        for (let i = position; i < data.length; i++) {
+            data[i] = data[i + 1];
+        }
+        data.length = data.length - 1;
+
+        document.getElementById(
+          "output"
+        ).innerHTML = `Value is delete at ${position} New array is ${data}`;
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" name="position`" id="pos" />
+    <button onclick="removeEl()">Remove Element</button>
+    <p id="array"></p>
+    <p id="output"></p>
+  </body>
+</html>

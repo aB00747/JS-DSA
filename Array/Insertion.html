@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INSERT ARRAY</title>
+    <script>
+      // Insert the value in array without loosing the exisitng value.
+      // For this logic we need to shift the value to right side. So we need use reverse loop to shift the value +1 position.
+      
+      let data = [1, 4, 5, 6, 2, 8, 9, 34, 3, 21];
+      let addNew = 70;
+      let position = 2; // 2 is the position where we want to add the new value.
+
+      // document.write(`before insertion of 70 at positiion 2 => ${data} || `);
+      console.log("data BEFORE:", data);
+      // for (let i = data.length - 1; i >= (position); i-- ){
+      //     data[i + 1] = data[i];
+      // }
+      // data[position] = addNew;
+
+      // for (let i = data.length -1; i >= 0; i--) {
+      //     if (i >= position) {
+      //         data[i+1] = data[i];
+      //         if(i==position) {
+      //             data[i] = addNew;
+      //         }
+      //     }
+      // }
+      // document.write(`after insertion of 70 at positiion 2 => ${data}`);
+      console.log("data:", data);
+
+      function insertElement() {
+        let data = [1, 4, 5, 6, 2, 8, 9, 34, 3, 21];
+        let position = document.getElementById("pos").value;
+        let element = document.getElementById("value").value;
+
+        if (isNaN(parseInt(position)) || isNaN(parseInt(element))) {
+          return alert("Please enter numbers");
+        }
+
+        if (position < 0 || position > data.length) {
+          return alert("Position must be between 0 and " + data.length);
+        }
+
+        for (let i = data.length - 1; i >= position; i--) {
+          data[i + 1] = data[i];
+        }
+
+        data[position] = parseInt(element);
+
+        // OR  I can use the splice instead of that js
+        // data.splice(position, 0, element);  1. position 2. how many elements to delete 3. element to add
+
+        console.log("data:", data);
+        document.getElementById("output").innerHTML = `Bengo !! => ${data}`;
+      }
+
+    </script>
+  </head>
+  <body>
+    <input type="text" type="text" id="pos" placeholder="enterb position" />
+    <input type="text" type="text" id="value" placeholder="enter new element" />
+    <button onclick="insertElement()">Insert</button>
+    <p id="output"></p>
+  </body>
+</html>
