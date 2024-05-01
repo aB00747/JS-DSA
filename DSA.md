@@ -36,7 +36,7 @@ The complete process to learn DSA from scratch can be broken into 4 parts:
       - Trees
       - Graphs
 
-*SEE THIS* -> ![alt text](image-1.png)
+*SEE THIS* -> ![alt text](DSA-chart.png)
 
 # Differences between the primitive and non-primitive data structure.
 
