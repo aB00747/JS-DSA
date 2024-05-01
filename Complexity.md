@@ -130,7 +130,7 @@ we consider the because if supriror/large, we remove other
 
 f(100) = 50000
 
-check this for to understand the equation with example ![alt text](image-2.png)
+check this for to understand the equation with example ![alt text](./assets/Asymptotic.png)
 
 
 # There are 3 type of Notation

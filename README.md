@@ -1,2 +1,2 @@
-# Data Structure with Javascript ![alt text](image.png)
+# Data Structure with Javascript ![alt text](./assets/image.png)
 
