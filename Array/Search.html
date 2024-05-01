@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+  </head>
+  <script>
+    // let data = [20, 50, 59, 30, 49, 23, 45, 32];
+    // let search = 49;
+    // let index = undefined;
+
+    // for (let i = 0; i < data.length; i++) {
+    //   if (data[i] === search) {
+    //     index = i;
+    //     console.log(`50 index of ${i}`);
+    //     // console.warn(`50 index of ${i}`)
+    //     // console.log(`50 index of ${i}`)
+    //     break;
+    //   }
+    // }
+    // console.log("Index of 49 is", index);
+    // console.log("Default function index of 49 is", data.indexOf(search)); // Deafault function to search index
+    // data.splice(2, 1); // 2 is index and 1 is how many element to delete
+    // console.log(data);
+    // console.log("Default function delete 49 from array");
+
+    function searchElement() {
+      let searchVal = document.getElementById("search").value;
+      console.log("searchVal",searchVal)
+      let data = [2, 35, 6, 74, 23, 4, 61, 7, 9, 63];
+      let index;
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] === parseInt(searchVal)) {
+        //   index = i;
+          console.log(`index of ${i}`);
+        //   break;
+        }
+      }
+    }
+  </script>
+  <body>
+    <input
+      type="text"
+      name="search"
+      id="search"
+      placeholder="enter to search from array"
+    />
+    <button onclick="searchElement()">Search</button>
+  </body>
+</html>

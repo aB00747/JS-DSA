@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge</title>
+  </head>
+  <script>
+    let firstArr = [1, 2, 4, 5, 6, 7, 78];
+    let secArr = [12, 2.5, 6.3, 7.8, 3242, 231];
+    let result = [];
+
+    for (let i = 0; i < firstArr.length; i++) {
+      result[i] = firstArr[i];
+    }
+
+    for (let i = 0; i < secArr.length; i++) {
+      result[firstArr.length + i] = secArr[i];
+    }
+
+    // console.log("RESULT :",result)
+
+    // let j = 0;
+    // for (let i = result.length; i < result.length + secArr.length; i++) {
+    //     console.log(secArr[j]);
+    //   result[i] = secArr[j];
+    //   j++;
+    // }
+
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // for (let i = 0; i < firstArr.length; i++) {
+    //   result[i] = firstArr[i];
+    // }
+
+    // for (let i = 0; i < secArr.length; i++) {
+    //   result.push(secArr[i]);
+    // }
+
+    // console.log("result", result);
+
+
+    // +++++++++++++++++++++++++++ Predifine(shortcut) ++++++++++++++++++++++++++++++++++++++
+
+      // let result2 = [...firstArr, ...secArr];      - spread opertor => allows us to quickly copy all or part of an existing array/object into another array/object.
+      // console.log("result", result2);
+
+      // to reverse array  =>
+
+      // result.reverse()
+      // console.log(result)
+
+
+  </script>
+  <body></body>
+</html>
+
+
+10 {line} + 13 (how many looping) = 23    -> time complexity      {*don't consider commented lines}    
+
+4 variables  -> space complexity
+
+
+if we consider sorting then 
+
+it will like 100 time looping to sort the array
+
+
+110  -> time complexity 
+
+
+if we consider the the array sorting and merge at a same time we can say the program is bad if we want to sort the array and merge it at the same time.
+
+so it's depends what we want to do.

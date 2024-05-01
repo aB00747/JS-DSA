@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge (While Loop)</title>
+  </head>
+  <script>
+    
+    let firstArr = [1, 2, 4, 5, 6, 7, 78];
+    let secArr = [12, 2.5, 6.3, 7.8, 3242, 231];
+    let result = [];
+    let i = 0;
+    let j = 0;
+    let k = 0;
+
+    while (i < firstArr.length && j < secArr.length) {
+      if (firstArr[i] < secArr[j]) {
+        result[k] = firstArr[i];
+        i++;
+      } else {
+        result[k] = secArr[j];
+        j++;
+      }
+      k++;
+    }
+
+    while (i < firstArr.length) {
+      result[k] = firstArr[i];
+      i++;
+      k++;
+    }
+
+    console.log("FINSH ARR", result);
+  </script>
+  <body></body>
+</html>
+
+21 (lines) + 13 (looping) = 34   -> time complexity
+
+
+6 variables  -> space complexity
+
+
+if we consider the the array sorting and merge at a same time we can say the program is good if we want to sort the array and merge it at the same time.
+
+
+
+
+
+
+
+
+

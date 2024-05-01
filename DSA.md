@@ -99,3 +99,45 @@ The complete process to learn DSA from scratch can be broken into 4 parts:
   - Make array, define the position
   - Use loop to insert new element
   - Delete element with text input and button
+
+## Q4. Search element in array (Linear search)
+  - Understand case solution
+  - Make array
+  - Use loop to search element
+  - Search element with text input and button
+    - shortuct for search elemnet (Default function)
+    - shortuct for delete elemnet (Default function)
+
+## Q4. Merge Two array (Linear search)
+  - Understand case solution
+  - Make array
+  - Use 2 Different loop to merge element
+    - Shortcut for reverse array element (Default function)
+    - Shortcut for merge array element (Default function)
+
+## Q5. Merge Two array (While loop)
+  - Understand case solution
+  - Make three arrays
+  - Use while loop to merge element
+    - Compare the logic with last one - merge
+
+
+
+# Space Complexity:
+  - The more the data the more the space complexity.
+  - eg.
+    - If there is two program 1st take more space ex. 10kb and 2nd take less space ex. 5kb. Like if our system have only 100kb space then 2nd program will take lesser space than 1st. 2nd have good space complexity.
+
+# Time Complexity:
+  - The more the time the more the time complexity.
+  - We can't directly calculate the time complexity. It's depend on 
+    - processor
+    - system 
+    - how good is your system is depend on that
+    - consider all scenarios, etc.
+  - Depend on the number of lines.
+    - The lesser the line of code the less the time complexity.
+    - The more the line of code the more the time complexity.
+  - We can calculate the time complexity with Big O notation.
+
+
