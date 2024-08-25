@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+// how to sort.
+// let array = [40, 30, 12, 25]
+let array = [23, 310, 2, 0, 9, 25, -7]
+
+
+// Sorting                 
+// let Result = [12, 25, 30, 40]
+
+
+for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+        console.log(array);
+        if (array[j] > array[j + 1]) {
+            let tmp = array[j];
+            array[j] = array[j+1];
+            array[j+1] = tmp;
+        } 
+    }
+}
+
+console.log(array);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
