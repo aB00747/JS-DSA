@@ -145,7 +145,7 @@ check this for to understand the equation with example ![alt text](./assets/Asym
 - Interview Question
 
 
-## Recursion Data Structure
+# Recursion Data Structure
 - what is Recursion Data Structure
 - Example.
 - Interview Questions
@@ -182,3 +182,64 @@ i.e let Apple as function
 
 from outside I called this function from outside one time but after that it goes inside and calling iteself recursively. which will create a infinite loop.
 if we apply proper conditio when can do anything like searching, sorting, etc.
+
+
+## Indirect Recursion
+- What is Indirect Recursion Data Structure?
+- Example
+- Interview Question
+
+
+Indirect recursion is a type of recursion where a function calls another function, which in turn calls the original function, either directly or indirectly. This creates a recursive loop, but the function does not call itself directly.
+
+
+let see,
+
+  function apple() {
+    orange();
+  }
+
+  function orange() {
+    apple();
+  }
+
+  apple();
+
+
+
+
+in this scenario, when called apple then goes from apple to orange and orange to apple recursively and vice versa this called indirect recursion.
+
+
+  function A(x) {
+    if (x > 0) {
+      B(x - 1);
+    }
+  }
+
+  function B(y) {
+    if (y > 0) {
+      A(y - 1);
+    }
+  }
+
+In this example, `A` calls `B`, and `B` calls `A`. This creates an indirect recursive loop. When `A` is called with a positive argument, it calls B with a smaller argument. `B` then calls `A` with an even smaller argument, and so on.
+
+# Note:
+
+  Indirect recursion can be more difficult to detect and debug than direct recursion, as the recursive call is not immediately apparent. However, it can also be a useful technique for solving certain types of problems.
+
+  Here are some key characteristics of indirect recursion:
+
+  1. **Indirect call:** A function calls another function, which in turn calls the original function.
+  2. **Recursive loop:** The sequence of function calls forms a loop, where the original function is eventually called again.
+  3. **No direct self-call:** The function does not call itself directly.
+
+  Indirect recursion can be used in various scenarios, such as:
+
+  1. **Mutual recursion:** Two or more functions call each other recursively.
+  2. **Cooperative recursion:** Multiple functions work together to solve a problem, with each function calling others in a     recursive manner.
+  3. **Dynamic programming:** Indirect recursion can be used to solve problems that involve breaking down a complex problem into smaller sub-problems.
+    To avoid infinite loop
+
+
