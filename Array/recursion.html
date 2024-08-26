@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+
+<script>
+
+// with while loop
+    // function  apple(x) {
+    //     while (x < 5) {
+    //         console.log("first", x)
+    //         apple();
+    //         x++;
+    //     }
+    // }
+
+    // let data = 0;
+
+// with if condition
+    // function apple(x) {
+    //     console.log(x);
+    //     if (x < 10) {
+    //         apple(x+1);
+    //     }
+    // }
+
+    // let data = 0
+    // apple(data);
+
+
+
+// find the factorial 5.
+
+    function factorial(val) {
+
+        if (val == 0) {
+            return 1;    // to counter 0 instead it will comvert into 1 to multiply.
+        }
+
+        return val * factorial(val-1);
+    }
+
+    let data = 6;
+    // factorial(data)
+    console.log(factorial(data));
+
+
+
+
+</script>
+
+
+<body>
+    <h1>Recursion</h1>
+</body>
+</html>

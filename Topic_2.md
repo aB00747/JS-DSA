@@ -144,3 +144,41 @@ check this for to understand the equation with example ![alt text](./assets/Asym
 - Write code and understand step by step
 - Interview Question
 
+
+## Recursion Data Structure
+- what is Recursion Data Structure
+- Example.
+- Interview Questions
+- While loop with Array Strings
+
+
+Let, break the Recursion,
+- Re-cursion means
+  - `Re` -  to repeat something.
+  - `cursion` - in latin which means => to itself.
+
+i.e let Apple as function
+
+
+  functio Apple() {
+    ......
+    ......
+  }
+
+  Apple();
+
+  this function get called one time. but if I called this function to itself then,
+
+
+  function Apple() {
+    ......
+    ......
+    Apple();
+    .......
+  }
+
+  Apple()
+
+
+from outside I called this function from outside one time but after that it goes inside and calling iteself recursively. which will create a infinite loop.
+if we apply proper conditio when can do anything like searching, sorting, etc.
