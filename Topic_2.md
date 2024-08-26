@@ -225,7 +225,7 @@ in this scenario, when called apple then goes from apple to orange and orange to
 
 In this example, `A` calls `B`, and `B` calls `A`. This creates an indirect recursive loop. When `A` is called with a positive argument, it calls B with a smaller argument. `B` then calls `A` with an even smaller argument, and so on.
 
-# Note:
+### Note:
 
   Indirect recursion can be more difficult to detect and debug than direct recursion, as the recursive call is not immediately apparent. However, it can also be a useful technique for solving certain types of problems.
 
