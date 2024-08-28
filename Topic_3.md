@@ -131,7 +131,7 @@ In this example, `A` calls `B`, and `B` calls `A`. This creates an indirect recu
 The call stack is used to manage the execution of functions in a program. When a function is called, a new entry is added to the top of the call stack, which includes the function's name, parameters, and local variables. When the function completes its execution, its entry is removed from the call stack.
 
 
-![alt text](callStack.png)
+![alt text](./assets/callStack.png)
 
 
 e.g.
@@ -166,3 +166,5 @@ In this example, the call stack would look like this:
 ### why call stack is important to know?
 
 The call stack is important for understanding how __JavaScript executes functions__ and manages scope. It's also useful for debugging, as it can help you understand the sequence of function calls that led to an error.
+
+
