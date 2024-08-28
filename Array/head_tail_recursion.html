@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head and Tail Recursion</title>
+  </head>
+  <script>
+
+
+    // in this it's hard to understand which function first or last ?
+    function colors() {
+      let data = 20;
+      console.log("data:", data);
+    }
+
+    function days() {
+      colors();
+    }
+
+    function fruits() {
+      days();
+    }
+
+    function topFunnction() {
+      fruits();
+    }
+
+    topFunnction();
+
+  </script>
+  <body>
+    <h1>Head and Tail Recursion</h1>
+  </body>
+</html>

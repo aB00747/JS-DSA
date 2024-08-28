@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indirect Recursion</title>
+  </head>
+  <script>
+    let money = 70;
+    let totalApple = 0;
+
+    function buyApple(money) {
+      if (money > 0) {
+        console.log(
+          "I have",
+          money,
+          "Rs.",
+          "Purchased the Apples:",
+          totalApple
+        );
+        buyMore(money);
+      } else {
+        console.log(
+          "You don't have enough money to buy an apple:",
+          money,
+          "Got the total Apples:",
+          totalApple
+        );
+      }
+    }
+
+    function buyMore(money) {
+      totalApple++;
+      buyApple(money - 10);
+    }
+
+    buyApple(money);
+
+    console.log("------------------BREAK---------------------");
+
+    function funcA(n) {
+      if (n > 0) {
+        console.log("A", n);
+        funcB(n - 1);
+      }
+    }
+
+    function funcB(m) {
+      if (m > 0) {
+        console.log("B",m)
+        funcA(m - 1);
+      }
+    }
+
+
+    funcA(10)
+  </script>
+
+  <body>
+    <h1>Indirect Recursion</h1>
+  </body>
+</html>
