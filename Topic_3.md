@@ -97,7 +97,7 @@ In this example, `A` calls `B`, and `B` calls `A`. This creates an indirect recu
     To avoid infinite loop
 
 
-# Q1. Head and Tail Recursion
+## Head and Tail Recursion
 - understand Debugger?
 - How js works (Call Stack Main)
 - Head recursion
