@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Majority Element</h1>
+</body>
+
+<script>
+    
+    function majorityElement(nums) {
+        const counts = {};
+        const majorityCount = Math.floor(nums.length / 2);
+        
+        for (let num of nums) {
+            counts[num] = (counts[num] || 0) + 1;
+            
+            if (counts[num] > majorityCount) {
+                return num;
+            }
+        }
+    }
+    
+    // Example usage:
+    // const nums = [3, 2, 3];
+    const nums = [2,2,1,1,1,2,2];
+    console.log(majorityElement(nums)); // Output: 3    
+    
+    </script>
+        
+        
+</html>

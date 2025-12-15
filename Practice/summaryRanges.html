@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var summaryRanges = function (nums) {
+    if (!nums) return [""];
+
+    let result = [];
+    let i = 0;
+    let start = 0;
+
+    while (i < nums.length) {
+        start = i;
+
+        while (i + 1 < nums.length && nums[i + 1] === nums[i] + 1) {
+            i++;
+        }
+
+        if (start == i) {
+            result.push(`${nums[start]}`);
+        } else {
+            result.push(`${nums[start]}->${nums[i]}`)
+        }
+    }
+
+    return result;
+};
+    // Example usage:
+    const nums = [0,1,2,4,5,7];
+    console.log(summaryRanges(nums)); // Output: ["0->2","4->5","7"]
+</script>
+</html>

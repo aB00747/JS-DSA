@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // for (let i = 0; i < 5; i++) {
+    //     let line = '';
+        
+    //     for (let j = 0; j < i + 1; j++) {
+    //         line += '*';
+    //     }
+    //     console.log(line);
+    // }
+
+    for (let i = 0; i < 5; i++) {
+        let line = '';
+
+
+        for (let k = 0; k < 5 - i - 1; k++) {
+            line += ' ';
+        }
+        
+        for (let j = 0; j <= i; j++) {
+            line += j;
+
+            if (j < 2 * i) line += ' ';
+        }
+
+        console.log(line);
+    }
+
+</script>
+
+</html>

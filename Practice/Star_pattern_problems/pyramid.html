@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="pyramid" style="font-family: monospace; font-size:16px; line-height:1.1; text-align: center;"></pre>
+</body>
+<script>
+    function printPyramid(rows) {
+        // for (let i = 1; i <= rows; i++) {
+        //     let spaces = ' '.repeat(rows - i);
+        //     let stars = '*'.repeat(2 * i - 1);
+        //     console.log(spaces + stars);
+        // }
+
+        const out = document.getElementById('pyramid');
+        // Build each line using nested loops (no String.repeat)
+        for (let i = 0; i < rows; i++) {
+            let line = '';
+            // Print leading spaces
+            for (let j = 0; j < rows - i - 1; j++) {
+                line += ' ';
+            }
+            // Print stars
+            for (let k = 0; k <= i; k++) {
+                line += '*';
+                // add a space between stars for a more open look (optional)
+                if (k < 2 * i) line += ' ';
+            }
+            // Append line to <pre>
+            // out.textContent += line + '\n';
+            console.log(line);
+        }
+    }
+
+    // Example usage:
+    const numberOfRows = 5;
+    printPyramid(numberOfRows);
+</script>
+</html>
