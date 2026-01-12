@@ -199,3 +199,58 @@ function printNnum(n) {
 
 console.log(printNnum(4))
 
+
+
+function symetricPattern(n) {
+    let str = "";
+
+    for(i = 1; i <= 2 * n - 1; i++) {
+        let stars = i;
+
+        if (i > n) {
+            stars = 2 * n - i;
+        }
+
+        for (j = 1; j <= stars; j++) {
+            // console.log("*");
+            str += "*"
+        }
+
+        str += "\n";
+    }
+
+    return str;
+}
+
+
+
+
+function zeroOne(n) {
+    let str = "";
+    let start  = 1;
+
+    for (let i = 0; i < n; i++) {
+        
+        if (i % 2 == 0) {
+            start = 1;
+        } else {
+            start = 0;
+        }
+
+        for (let j =  0; j <= i; j++) {
+            // str += start
+            // start = start == 0 ? 1 : 0;
+            str += start;
+            start = 1 - start;
+        }
+
+        str += "\n";
+
+    }
+
+    return str;
+}
+
+console.log(zeroOne(5)) 
+
+
