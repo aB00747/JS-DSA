@@ -403,7 +403,9 @@ def diffInt(arr, k):
     while r < n:
         mpp[arr[r]] = mpp.get(arr[r], 0) + 1
 
-        while len(mpp) > k:
+        # while len(mpp) > k:
+        if len(mpp) > k:
+            # use if instead of to reduce the TC 2n to n
             mpp[arr[l]] -= 1
 
             if mpp[arr[l]] == 0:
@@ -422,29 +424,120 @@ arr = [2, 1, 1, 1, 3, 4, 3, 2]
 print("diffInt", diffInt(arr, 3))
 
 
+# Longest substring with at most k distinct characters
+def longest_k_distnct(arr, k):
+    """
+    Find the length of the longest substring with at most k distinct characters.
+    This function uses a sliding window approach with a two-pointer technique to
+    efficiently find the longest contiguous substring that contains at most k
+    distinct elements from the given array.
+    Args:
+        arr (list): A list of elements (typically integers or characters) to search through.
+        k (int): The maximum number of distinct elements allowed in the substring.
+    Returns:
+        int: The length of the longest substring containing at most k distinct elements.
+             Returns 0 if the array is empty or k is 0.
+    Time Complexity:
+        O(n) where n is the length of the array. Each element is visited at most twice
+        (once by right pointer and once by left pointer).
+    Space Complexity:
+        O(min(n, k)) for the hashmap storing at most k distinct elements.
+    Example:
+        >>> longest_k_distnct([1, 2, 1, 2, 3], 2)
+        4
+        >>> longest_k_distnct(['a', 'a', 'b', 'b', 'c'], 2)
+        4
+    """
+
+    l = r = 0
+    max_len = 0
+    mpp = {}
+    n = len(arr)
+
+    while r < n:
+        mpp[arr[r]] = mpp.get(arr[r], 0) + 1
+
+        if len(mpp) > k:
+            mpp[arr[l]] = mpp.get(arr[l], 0) - 1
+
+            # delete hash key and value
+            if mpp[arr[l]] == 0:
+                del mpp[arr[l]]
+
+            l += 1
+
+        if len(mpp) < k:
+            max_len = max(max_len, r - l + 1)
+
+        r += 1
+
+    return max_len
+
+s = "aaabbccd"
+print("longest_k_distnct", longest_k_distnct(s, 2))
 
 
+# Number of substrings Containig all three characters
+def rough_num_substring_three_char(s):
+    count = 0
+    n = len(s)
+
+    for i in range(n):
+        char_hash = {}
+
+        for j in range(i, n):
+            char_idx = ord(s[j]) - ord('a')
+            if char_idx < 3:  # only count 'a', 'b', 'c'
+                char_hash[char_idx] = 1
+
+            if len(char_hash) == 3:
+                count += 1
+
+    return count
+
+s = "bbacba"
+print(rough_num_substring_three_char(s))
 
 
+# Optimize with sliding window
+def nums_of_substring_three_char(s):
+    """
+    Count the number of substrings containing at least one occurrence of each of three specific characters.
+    This function counts all substrings of the input string that contain at least one occurrence 
+    of each of the first three characters of the alphabet ('a', 'b', and 'c').
+    Args:
+        s (str): The input string to analyze. Should contain lowercase alphabetic characters.
+    Returns:
+        int: The total count of substrings that contain at least one occurrence of 'a', 'b', and 'c'.
+    Algorithm:
+        - Maintains a list of last seen indices for characters 'a', 'b', and 'c'.
+        - Iterates through the string, updating the last seen index for each character.
+        - For each position where all three characters have been seen at least once,
+          counts all valid substrings ending at the current position.
+        - The count contribution is based on the minimum index among the three characters,
+          which represents the earliest position in the current window.
+    Time Complexity:
+        O(n) where n is the length of the input string.
+    Space Complexity:
+        O(1) as only a fixed-size array of 3 elements is used.
+    Example:
+        >>> nums_of_substring_three_char("abacabad")
+        4
+    """
 
+    last_seen = [-1, -1, -1]
+    count = 0
+    n = len(s)
 
+    for i in range(n):
+        # ord for ASCII '-' for the index 
+        char_idx = ord(s[i]) - ord('a')
 
+        last_seen[char_idx] = i
 
+        if last_seen[0] != -1 and last_seen[1] != -1 and last_seen[2] != -1:
+            count = count + (1 + min(last_seen[0], last_seen[1], last_seen[2]))
 
+    return count
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("nums_of_substring_three_char", nums_of_substring_three_char(s))
